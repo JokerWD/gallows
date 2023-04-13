@@ -27,6 +27,7 @@ public class gallows {
                 attempts--;
             }
         }
+        scanner.close();
         printResult(isComplete(guessesWord), word);
     }
     private static StringBuilder initializeGuessesWord(String word){
