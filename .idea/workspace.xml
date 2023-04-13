@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8873dc2d-a122-4018-90f0-c39e51dc9b42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gallows.java" afterDir="false" />
+    <list default="true" id="8873dc2d-a122-4018-90f0-c39e51dc9b42" name="Changes" comment="First">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gallows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gallows.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +52,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681394888186</updated>
-      <workItem from="1681394889570" duration="3175000" />
+      <workItem from="1681394889570" duration="4214000" />
     </task>
+    <task id="LOCAL-00001" summary="First">
+      <created>1681398396341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681398396341</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,5 +77,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First" />
+    <option name="LAST_COMMIT_MESSAGE" value="First" />
   </component>
 </project>
