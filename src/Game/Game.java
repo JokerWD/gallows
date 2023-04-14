@@ -2,13 +2,19 @@ package Game;
 
 import java.util.Random;
 
-public class SoloGame extends Gallows {
-    private static final String[] WORDS = {
-      "яблоко", "молоко", "пирожок", "масло"
-    };
-    public void playSolo(){
+public class Game extends Gallows {
+    private static  String[] words;
+    public Game(){
+        words = new String[]{
+                "яблоко", "молоко", "пирожок", "масло"
+        };
+    }
+    public Game(String[] words){
+        this.words = words;
+    }
+    public void play(){
         Random random = new Random();
-        word = WORDS[random.nextInt(WORDS.length)];
+        word = words[random.nextInt(words.length)];
         guessesWord = initializeGuessesWord(word);
 
         while (attempts > 0 && !isComplete(guessesWord)){
