@@ -8,21 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordsFileReader {
-    public List<String> readWordsFromFile(String fileName){ // отловить ошибку с файлом если его не возможно найти
+    public List<String> readWordsFromFile(String fileName) {
         Path filePath = Paths.get(fileName);
-        List<String> words = readWordsFromFile(filePath);
-        return words;
-    }
-    private List<String> readWordsFromFile(Path filePath) {
         List<String> words = new ArrayList<>();
         try (BufferedReader reader = Files.newBufferedReader(filePath)) {
             String line;
-            while ((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 words.add(line.trim());
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Ошибка при чтении файла: " + e.getMessage());
         }
         return words;
     }
+
 }
