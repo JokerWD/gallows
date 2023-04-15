@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         printWelcomeMessage();
-        Game game = null;
+        Game game;
         Scanner scanner = new Scanner(System.in);
         String inputUser = scanner.nextLine();
         if(inputUser.equals("1")){
@@ -13,7 +13,11 @@ public class Main {
             inputUser = scanner.nextLine().toLowerCase();
             String[] inputWords = inputUser.split("\\s+");
             game = new Game(inputWords);
-        }else{
+        }else if(inputUser.equals("2")){
+            System.out.print("Введите название файла: ");
+            inputUser = scanner.nextLine();
+            game = new Game(inputUser);
+        }else {
             game = new Game();
         }
         game.play();
@@ -22,7 +26,10 @@ public class Main {
     private static void printWelcomeMessage(){
         System.out.println("Добро пожаловать в игру Виселица!");
         System.out.println("У вас есть 5 попыток");
-        System.out.println("Хотите ли вы задать список слов? 1 - да, 0 - нет ");
+        System.out.println("Меню");
+        System.out.println("1 - Вы сами вводи слова и после чего с этими словами играете");
+        System.out.println("2 - Ввести слова из txt файла");
+        System.out.println("3 - Играть с шаблонными словами");
     }
 
 }

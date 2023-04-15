@@ -12,6 +12,10 @@ public class Game extends Gallows {
     public Game(String[] words){
         this.words = words;
     }
+    public Game(String fileName){
+        WordsFileReader file = new WordsFileReader();
+        words = file.readWordsFromFile(fileName).toArray(new String[0]);
+    }
     public void play(){
         Random random = new Random();
         word = words[random.nextInt(words.length)];
