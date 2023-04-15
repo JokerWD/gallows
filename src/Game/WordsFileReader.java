@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordsFileReader {
-    public List<String> readWordsFromFile(String fileName){
+    public List<String> readWordsFromFile(String fileName){ // отловить ошибку с файлом если его не возможно найти
         Path filePath = Paths.get(fileName);
         List<String> words = readWordsFromFile(filePath);
         return words;

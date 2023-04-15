@@ -5,7 +5,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 public abstract class Gallows {
-
+    private WinStreakReader winStreakReader = new WinStreakReader();
+    private int winStreak = 0;
     protected Scanner scanner = new Scanner(System.in);
     protected String word;
     protected int attempts = 5;
@@ -14,10 +15,12 @@ public abstract class Gallows {
     protected boolean found;
     protected Set<Character> enteredLetters =  new HashSet<>();
 
+
+    public void loadWinStreakFromFile(){
+        winStreak = winStreakReader.loadWinStreak();
+    }
     protected  StringBuilder initializeGuessesWord(String word){
-        StringBuilder guessesWord = new StringBuilder(word.length());
-        word.chars().forEach(c -> guessesWord.append('_'));
-        return guessesWord;
+        return new StringBuilder("_".repeat(word.length()));
     }
     protected  void printCurrentState(StringBuilder guessesWord, int attempts){
         System.out.println("Текущее состояние слова: " + guessesWord);
@@ -43,13 +46,22 @@ public abstract class Gallows {
         return found;
     }
     protected  boolean isComplete(StringBuilder guessesWord){
+
         return !guessesWord.toString().contains("_");
     }
     protected  void printResult(boolean isComplete, String word){
         if(isComplete){
             System.out.println("Ты победил! Слово: " + word);
+            winStreak++;
         }else {
             System.out.println("Ты проиграл! Слово: " + word);
+            winStreak = 0;
         }
+        winStreakReader.saveWinStreak(winStreak);
+        System.out.println("Текущая серия побед: " + winStreak);
+    }
+    protected void resetGame(){
+        attempts = 5;
+        enteredLetters = new HashSet<>();
     }
 }

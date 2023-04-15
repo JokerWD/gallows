@@ -1,5 +1,4 @@
 package Game;
-
 import java.util.Random;
 
 public class Game extends Gallows {
@@ -16,7 +15,7 @@ public class Game extends Gallows {
         WordsFileReader file = new WordsFileReader();
         words = file.readWordsFromFile(fileName).toArray(new String[0]);
     }
-    public void play(){
+    public boolean play(){
         Random random = new Random();
         word = words[random.nextInt(words.length)];
         guessesWord = initializeGuessesWord(word);
@@ -36,7 +35,16 @@ public class Game extends Gallows {
                 attempts--;
             }
         }
-        scanner.close();
         printResult(isComplete(guessesWord), word);
+        System.out.print("Хотите сыграть ещё раз?(y or n): ");
+        String userInput = scanner.next();
+        if(userInput.equals("y")){
+            resetGame();
+            return true;
+        }else {
+            scanner.close();
+            return false;
+        }
+
     }
 }
