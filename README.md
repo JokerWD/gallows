@@ -4,8 +4,8 @@
 
 Есть возможность запустить игру через докер
 команда для сборки контейнера:
-docker build -t gallows .
+" docker build -t gallows . "
 команда для запуска:
-docker run -it —name gallows gallows
+" docker run -it —name gallows gallows "
 Рекомендация после игры делать зачистку запущенных контейнеров:
-docker rm $(docker ps -qa)
+" docker rm $(docker ps -qa) "
